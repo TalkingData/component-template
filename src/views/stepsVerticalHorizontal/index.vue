@@ -15,7 +15,9 @@
             <page-header
                 :data='pageHeaderData'
                 name='步骤表单-横'
-            ></page-header>
+            >
+                <my-step></my-step>
+            </page-header>
             <Card
                 class='stepsVerticalHorizontal-card'
                 :padding='0'
@@ -24,7 +26,6 @@
                     :labelPosition='"left"'
                     :labelWidth='140'
                 ></my-form>
-
             </Card>
         </t-administration-menu>
     </div>
@@ -34,9 +35,11 @@ import tHeader from '@/components/t-header';
 import tAdministrationMenu from '@/components/t-administration-menu';
 import pageHeader from '@/components/pageHeader';
 import myForm from '@/components/form';
+import myStep from './steps';
+
 export default {
     name: 'stepsVerticalHorizontal',
-    components: { tHeader, tAdministrationMenu, pageHeader, myForm },
+    components: { tHeader, tAdministrationMenu, pageHeader, myForm, myStep },
     data() {
         return {
             pageHeaderData: [

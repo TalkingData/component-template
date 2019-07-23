@@ -8,7 +8,7 @@
     <main class='steps'>
         <Steps
             size='small'
-            :current="2"
+            :current="1"
             direction="vertical"
         >
             <Step
