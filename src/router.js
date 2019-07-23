@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import cardList from "./views/cardList/index.vue";
 
 Vue.use(Router);
 
@@ -8,17 +8,40 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "index",
+      redirect: "/stepsVerticalHorizontal"
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: "/cardList",
+      name: "cardList",
+      component: cardList
+    },
+    {
+      path: "/personalInformation",
+      name: "personalInformation",
+      component: () => import("./views/personalInformation/index.vue")
+    },
+    // 标准表格
+    {
+      path: "/standardForm",
+      name: "standardForm",
+      component: () => import("./views/standardForm/index.vue")
+    },
+    {
+      path: "/dropdown",
+      name: "dropdown",
+      component: () => import("./views/dropdown/index.vue")
+    },
+
+    {
+      path: "/stepsVerticalRow",
+      name: "stepsVerticalRow",
+      component: () => import("./views/stepsVerticalRow/index.vue")
+    },
+    {
+      path: "/stepsVerticalHorizontal",
+      name: "stepsVerticalHorizontal",
+      component: () => import("./views/stepsVerticalHorizontal/index.vue")
     }
   ]
 });
